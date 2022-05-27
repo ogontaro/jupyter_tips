@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  notebook:
+    build:
+      dockerfile: ./containers/jupyter/Dockerfile
+      context: ./
+    container_name: jupyter_sandbox_jupyter
+    command: "start.sh jupyter lab --LabApp.token=''"
+    volumes:
+      - ./work/:/home/jovyan/work
+      - ./requirements.txt/:/home/jovyan/requirements.txt
+    ports:
+      - "8888:8888"
