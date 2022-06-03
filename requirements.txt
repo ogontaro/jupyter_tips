@@ -1,3 +1,4 @@
 afdko==3.8.3
 pylint==2.13.9
 jupyterlab-language-pack-ja-JP==3.4.post0
+kaggle==1.5.12

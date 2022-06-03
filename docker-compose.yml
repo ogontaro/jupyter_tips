@@ -8,7 +8,11 @@ services:
     container_name: jupyter_sandbox_jupyter
     command: "start.sh jupyter lab --LabApp.token=''"
     volumes:
-      - ./tips/:/home/jovyan/tips
+      - ./tips/:/home/jovyan/work
+      - ./data:/home/jovyan/data
       - ./requirements.txt/:/home/jovyan/requirements.txt
+      - ./containers/jupyter/entrypoint.sh:/entrypoint.sh
     ports:
       - "8888:8888"
+    env_file:
+      - ./.env

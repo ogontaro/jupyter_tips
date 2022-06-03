@@ -22,3 +22,5 @@ RUN rm -rf /home/jovyan/.cache
 
 USER jovyan
 WORKDIR "${HOME}"
+RUN mkdir data
+ENTRYPOINT ["/entrypoint.sh"]
